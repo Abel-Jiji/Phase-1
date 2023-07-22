@@ -66,36 +66,30 @@
                 <input type="radio" id="other" name="gender" value="other" required>
                 <label for="other">Other</label>
             </div>
-            <input type="text" name="phone" id="phone" class="box" placeholder="phone number" onfocusout="validatePhoneNumber()" maxlength="10" required>
-            <input type="email" name="email" id="email" class="box" onfocusout="validateEmail()" placeholder="email" required>
+            <input type="text" name="phone" id="phone" class="box" placeholder="phone number"
+                onfocusout="validatePhoneNumber()" maxlength="10" required>
+            <input type="email" name="email" id="email" class="box" onfocusout="validateEmail()" placeholder="email"
+                required>
             <div>
                 <label for="state" class="txt">State </label>
-                <select name="state" id="state">
+                <select name="state" id="state" onchange="updateCities()">
                     <option value="opt">--Choose an option--</option>
                     <option value="delhi">New Delhi</option>
                     <option value="rajasthan">Rajasthan</option>
                     <option value="goa">Goa</option>
                     <option value="karnataka">Karnataka</option>
                     <option value="tamilnadu">Tamil Nadu</option>
-                    <option value="Kerala">Kerala</option>
+                    <option value="kerala">Kerala</option>
                 </select>
                 <label for="city" class="txt">City </label>
                 <select name="city" id="city">
-                    <option value="opt">--Choose an option--</option>
-                    <option value="agra">Agra</option>
-                    <option value="jaipur">Jaipur</option>
-                    <option value="ahmedabad">Ahmedabad</option>
-                    <option value="banglore">Banglore</option>
-                    <option value="hydreabad">Hyderabad</option>
-                    <option value="chennai">Chennai</option>
-                    <option value="coimbatore">Coimbatore</option>
-                    <option value="kochi">Kochi</option>
-                    <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="opt">--Choose a state first--</option>
                 </select>
             </div>
             <input type="text" name="uname" class="box" placeholder="username" required>
             <input type="password" name="pass" id="pass" class="box" placeholder="password" required>
-            <input type="password" name="cpass" id="cpass" class="box" placeholder="confirm your password" onfocusout="validatePassword()" required>
+            <input type="password" name="cpass" id="cpass" class="box" placeholder="confirm your password"
+                onfocusout="validatePassword()" required>
             <input type="submit" class="btn" name="submit" value="register">
             <p>already have an account? <a href="login.html">login now</a></p>
         </form>
@@ -133,10 +127,6 @@
     <!-- end of footer section -->
 
     <script src="js/script.js"></script>
-
-    <script>
-        
-    </script>
 
 </body>
 
