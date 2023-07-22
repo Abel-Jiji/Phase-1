@@ -43,3 +43,64 @@ function validatePhoneNumber() {
         phoneInput.setCustomValidity(''); // Reset the custom validation message if valid
     }
 }
+
+// City data for each state
+const cityData = {
+    delhi: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Agra', value: 'agra' },
+        { name: 'Jaipur', value: 'jaipur' },
+        // Add other city options for Delhi
+    ],
+    rajasthan: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Udaipur', value: 'udaipur' },
+        { name: 'Jodhpur', value: 'jodhpur' },
+        // Add other city options for Rajasthan
+    ],
+    goa: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Panaji', value: 'panaji' },
+        { name: 'Margao', value: 'margao' },
+        // Add other city options for Goa
+    ],
+    karnataka: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Bangaluru', value: 'bangaluru' },
+        { name: 'Mysuru', value: 'mysuru' },
+        // Add other city options for Karnataka
+    ],
+    tamilnadu: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Coimbatore', value: 'coimbatore' },
+        { name: 'Madurai', value: 'madurai' },
+        // Add other city options for Tamil Nadu
+    ],
+    kerala: [
+        { name: '--Choose an option--', value: '' },
+        { name: 'Kochi', value: 'kochi' },
+        { name: 'Thiruvanathapuram', value: 'thiruvanathapuram' },
+        // Add other city options for Kerala
+    ],
+};
+
+function updateCities() {
+    const stateInput = document.getElementById('state');
+    const cityInput = document.getElementById('city');
+    const selectedState = stateInput.value;
+
+    // Clear the current options in the City dropdown
+    cityInput.innerHTML = '';
+
+    // Create new options based on the selected State
+    if (selectedState !== 'opt' && cityData[selectedState]) {
+        cityData[selectedState].forEach(city => {
+            const option = new Option(city.name, city.value);
+            cityInput.appendChild(option);
+        });
+    } else {
+        // If no state is selected or if the selected state has no cities yet
+        const defaultOption = new Option('--Choose a state first--', 'opt');
+        cityInput.appendChild(defaultOption);
+    }
+}
